@@ -10,6 +10,9 @@ RUN apt-get update -qq && \
 # app specific
 RUN mkdir /myapp
 WORKDIR /myapp
+
+RUN gem install bundler
+
 ADD Gemfile /myapp/Gemfile
 ADD Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
